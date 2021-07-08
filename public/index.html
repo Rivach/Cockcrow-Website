@@ -24,20 +24,143 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+
+    <title>Cockcrow</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Itim:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Itim:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Tangerine:wght@200;300;400;500;600&display=swap"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.1.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="%PUBLIC_URL%/js/modal-video.min.css" />
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop()
+          if (scroll > 100) {
+            $('.overlay').css('background', '#FFFFFF')
+            $('.overlay').css('color', '#FFFFFF')
+            $('.overlay').css('box-shadow', '0 8px 6px -5px rgb(129, 126, 126)')
+          } else {
+            $('.overlay').css('background', 'rgb(0,0,0,.1)')
+            $('.overlay').css(
+              'box-shadow',
+              '0px 0px 0px 0px rgb(129, 126, 126)',
+            )
+            $('.overlay').css('color', '#FFFFFF')
+          }
+        })
+      })
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/js/nav.js"></script>
+    <link rel="stylesheet" href="%PUBLIC_URL%/js/aos.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/js/aos.js" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/style.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script>
+      let tabs = document.querySelector('.tabs')
+      let tabHeader = tabs.querySelector('.tab-header')
+      let tabBody = tabs.querySelector('.tab-body')
+      let tabIndicator = tabs.querySelector('.tab-indicator')
+      let tabHeaderNodes = tabs.querySelectorAll('.tab-header > div')
+      let tabBodyNodes = tabs.querySelectorAll('.tab-body > div')
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      for (let i = 0; i < tabHeaderNodes.length; i++) {
+        tabHeaderNodes[i].addEventListener('click', function () {
+          tabHeader.querySelector('.active').classList.remove('active')
+          tabHeaderNodes[i].classList.add('active')
+          tabBody.querySelector('.active').classList.remove('active')
+          tabBodyNodes[i].classList.add('active')
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+          tabIndicator.style.left = `calc(calc(100% / 4) * ${i})`
+        })
+      }
+    </script>
+    <script src="%PUBLIC_URL%/js/jquery-modal-video.min.js"></script>
+    <script>
+      $('.video-play').modalVideo()
+    </script>
+    <script>
+      const scriptURL =
+        'https://script.google.com/macros/s/AKfycbyuamNLX_JEnE-SKtc69KEpuG3z1Y3iZWlobBbMjQ/exec'
+      const form = document.forms['submit-to-google-sheet']
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form),
+        })
+          .then((response) => console.log('Success!', response))
+          .catch((error) => console.error('Error!', error.message))
+      })
+    </script>
+    <script>
+      $('#submit').click(function () {
+        alert('Successfully Submited ')
+      })
+    </script>
+    <script>
+      $(document).ready(function () {
+        $('#cockcrow').on('submit', function (evt) {
+          evt.preventDefault()
+          setTimeout(function () {
+            window.location.reload()
+          }, 0)
+          this.submit()
+        })
+      })
+    </script>
+    <script>
+      function first() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg1.jpg'
+      }
+
+      function second() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg2.jpg'
+      }
+
+      function thrid() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg3.jpg'
+      }
+
+      function four() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg4.jpg'
+      }
+      setInterval(first, 5000)
+      setInterval(second, 10000)
+      setInterval(thrid, 15000)
+      setInterval(four, 20000)
+    </script>
   </body>
 </html>
