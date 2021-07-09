@@ -13,13 +13,13 @@ function Header() {
             />
           </a>
           <ul className='nav-menu'>
-            <li className='nav-item'>
+            <li className='nav-item text-white'>
               <a href='#about' className='nav-link'>
                 About
               </a>
             </li>
-            <li className='nav-item'>
-              <a href='/events' className='nav-link'>
+            <li className='nav-item text-white'>
+              <a href='/events' className='nav-link '>
                 Events & Stories
               </a>
             </li>
