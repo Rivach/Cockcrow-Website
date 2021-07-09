@@ -1,41 +1,11 @@
 import React from 'react'
+import Footer from './Footer'
+import Header from './Header'
 
 const joinUs = () => {
   return (
     <div className='join-us'>
-      <header>
-        <nav class='navbar'>
-          <a href='index.html' class='nav-logo'>
-            <img
-              src={process.env.PUBLIC_URL + './images/logo.png'}
-              class='h-28 w-28'
-              alt=''
-            />
-          </a>
-          <ul class='nav-menu'>
-            <li class='nav-item'>
-              <a href='index.html#about' class='nav-link'>
-                About
-              </a>
-            </li>
-            <li class='nav-item'>
-              <a href='events.html' class='nav-link'>
-                Events & Stories
-              </a>
-            </li>
-            <li class='nav-item'>
-              <a href='index.html#contact' class='nav-link contact'>
-                Contact us
-              </a>
-            </li>
-          </ul>
-          <div class='hamburger'>
-            <span class='bar2'></span>
-            <span class='bar2'></span>
-            <span class='bar2'></span>
-          </div>
-        </nav>
-      </header>
+      <Header />
       <h1
         class='vendor-text text-center text-4xl'
         style={{ fontFamily: 'Raleway', fontWeight: 500 }}
@@ -331,86 +301,7 @@ const joinUs = () => {
           </a>{' '}
           to fill form for Manager-role
         </h1>
-        <footer class='footer-distributed mt-10'>
-          <div class='footer-left -mt-16'>
-            <img
-              src={process.env.PUBLIC_URL + 'images/logo.png'}
-              class='h-28  footerimg'
-              alt=''
-            />
-
-            <p class='footer-links'>
-              <a href='index.html#about' class='link-1'>
-                About us
-              </a>
-
-              <a href='joinus.html'>Work with us</a>
-              <a href='privacypolicy.html'>Privacy Policy</a>
-              <a href="TandC's.html">T&C</a>
-            </p>
-
-            <p class='footer-company-name'>
-              Copyright © 2020 CockCrow Events. All rights reserved.
-            </p>
-          </div>
-
-          <div class='footer-right'>
-            <p class='footer-company-about'>
-              <span>Follow us on </span>{' '}
-            </p>
-            <div class='social-container'>
-              <ul class='social-icons'>
-                <li>
-                  <a
-                    href='https://www.instagram.com/cockcrow_events/'
-                    target='_blank'
-                  >
-                    <i class='fa fa-instagram'></i>
-                  </a>
-                </li>
-                <li>
-                  <a href='https://twitter.com/CockcrowEvents' target='_blank'>
-                    <i class='fa fa-twitter'></i>
-                  </a>
-                </li>
-                <li>
-                  <a href='https://www.facebook.com/' target='_blank'>
-                    <i class='fa fa-facebook'></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://www.youtube.com/channel/UCikmynJ5xkxF6HxleYqy1BQ'
-                    target='_blank'
-                  >
-                    <i class='fab fa-youtube'></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class='footer-center'>
-            <div>
-              <i class='fa fa-phone'></i>
-              <p>
-                <span>Contact us</span>+91 0000 000 000
-              </p>
-            </div>
-            <div>
-              <i class='fa fa-map-marker'></i>
-              <p>
-                <span>KPHB</span> Hyderabad, Telangana
-              </p>
-            </div>
-
-            <div>
-              <i class='fa fa-envelope'></i>
-              <p>
-                <a href='mailto:support@company.com'>cockrow@gmail.com</a>
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </section>
     </div>
   )

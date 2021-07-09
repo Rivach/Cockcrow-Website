@@ -1,14 +1,40 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import Header from './Header'
 import Calendly from './Calendly'
+import sanityClient from '../client.js'
+import { Link } from 'react-router-dom'
+import Footer from './Footer'
 
 const Home = () => {
+  const [postData, setPost] = useState(null)
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "events"]{
+         title,
+        slug,
+        eventPlace,
+         mainImage{
+             asset->{
+                 _id,
+                 url
+             },
+             alt
+         }
+    }`,
+      )
+      .then((data) => {
+        console.log(data)
+        setPost(data)
+      })
+      .catch(console.error)
+  }, [])
+
   return (
     <>
       <Header />
       <section className='hero body-font'>
-        <div className='hero1 mx-auto flex px-0 back md:flex-row flex-col items-center '>
+        <div className='hero1 mx-auto flex px-0  md:flex-row flex-col items-center'>
           <div className='banner'>
             <img
               id='ban'
@@ -19,19 +45,19 @@ const Home = () => {
           </div>
 
           <div className='txt md:w-4/5 flex flex-col text-white items-center'>
-            <h4
+            <h3
               className='txt1 text-5xl text-center mb-2 p-0'
               style={{ fontFamily: 'Raleway', fontWeight: 800 }}
             >
               We Make Your Moments
-            </h4>
-            <h4
+            </h3>
+            <h3
               className='txt2 text-5xl text-center mb-8 p-2'
               style={{ fontFamily: 'Raleway', fontWeight: 1000 }}
             >
               More Memorable
-            </h4>
-
+            </h3>
+            {/* <h2>Hello</h2> */}
             <div className='contb flex justify-center'>
               <button
                 className='contact2 ml-0   py-2 px-6  rounded text-xl'
@@ -142,57 +168,37 @@ const Home = () => {
             </h1>
           </div>
           <div className='flex flex-wrap -m-4'>
-            <div className='lg:w-1/3 sm:w-1/2 p-4'>
-              <div className='flex relative'>
-                <div className='image'>
-                  <img
-                    className='image__img'
-                    src={process.env.PUBLIC_URL + '/images/ab1.jpg'}
-                    alt='Bricks'
-                  />
-                  <div className='image__overlay image__overlay--blur'>
-                    <div className='image__title'>Title</div>
-                    <p className='image__description'>Place and date time</p>
+            {postData &&
+              postData.map((post, index) => (
+                <>
+                  <div className='lg:w-1/3 sm:w-1/2 p-4'>
+                    <Link to={'/events/' + post.slug.current} key={index}>
+                      <div className='flex relative'>
+                        <div className='image'>
+                          <img
+                            className='image__img'
+                            src={post.mainImage.asset.url}
+                            alt='Event'
+                          />
+                          <div className='image__overlay image__overlay--blur'>
+                            <div className='image__title'> {post.title}</div>
+                            <p className='image__description'>
+                              {post.eventPlace}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className='lg:w-1/3 sm:w-1/2 p-4'>
-              <div className='flex relative'>
-                <div className='image'>
-                  <img
-                    className='image__img'
-                    src={process.env.PUBLIC_URL + '/images/abt2.jpg'}
-                    alt='Bricks'
-                  />
-                  <div className='image__overlay image__overlay--blur'>
-                    <div className='image__title'>Title</div>
-                    <p className='image__description'>Place and date time</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='lg:w-1/3 sm:w-1/2 p-4'>
-              <div className='flex  relative'>
-                <div className='image'>
-                  <img
-                    className='image__img'
-                    src={process.env.PUBLIC_URL + '/images/h3.jpg'}
-                    alt='Bricks'
-                  />
-                  <div className='image__overlay image__overlay--blur'>
-                    <div className='image__title'>Title</div>
-                    <p className='image__description'>Place and date time</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </>
+              ))}
+
             <div className='items-center eventbutton mt-10 flex justify-center'>
               <button
                 className='viewMoreEvents ml-0   py-2 px-6  rounded text-xl'
                 style={{ fontFamily: 'Raleway', fontWeight: 'bold' }}
               >
-                <a href='events.html'>View more events</a>
+                <Link to='/events'>View more events</Link>
               </button>
             </div>
           </div>
@@ -412,97 +418,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <section>
-        <footer class='footer-distributed mt-10'>
-          <div class='footer-left -mt-16'>
-            <img
-              src={process.env.PUBLIC_URL + './images/logo.png'}
-              class='h-28  footerimg'
-              alt=''
-            />
-
-            <p class='footer-links'>
-              <a href='#about' class='link-1'>
-                About us
-              </a>
-
-              <a href='joinus.html'>Work with us</a>
-              <a href='privacypolicy.html'>Privacy Policy</a>
-              <a href="TandC's.html">T&C</a>
-            </p>
-
-            <p class='footer-company-name'>
-              Copyright © 2020 CockCrow Events. All rights reserved.
-            </p>
-          </div>
-
-          <div class='footer-right'>
-            <p class='footer-company-about'>
-              <span>Follow us on </span>{' '}
-            </p>
-            <div class='social-container'>
-              <ul class='social-icons'>
-                <li>
-                  <a
-                    href='https://www.instagram.com/cockcrow_events/'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <i class='fa fa-instagram'></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://twitter.com/CockcrowEvents'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <i class='fa fa-twitter'></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://www.facebook.com/'
-                    rel='noreferrer'
-                    target='_blank'
-                  >
-                    <i class='fa fa-facebook'></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://www.youtube.com/channel/UCikmynJ5xkxF6HxleYqy1BQ'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <i class='fab fa-youtube'></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class='footer-center'>
-            <div>
-              <i class='fa fa-phone'></i>
-              <p>
-                <span>Contact us</span>+91 0000 000 000
-              </p>
-            </div>
-            <div>
-              <i class='fa fa-map-marker'></i>
-              <p>
-                <span>KPHB</span> Hyderabad, Telangana
-              </p>
-            </div>
-            <div>
-              <i class='fa fa-envelope'></i>
-              <p>
-                <a href='mailto:support@company.com'>cockrow@gmail.com</a>
-              </p>
-            </div>
-          </div>
-        </footer>
-      </section>
+      <Footer />
     </>
   )
 }

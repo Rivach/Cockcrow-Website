@@ -60,25 +60,6 @@
     ></script>
 
     <link rel="stylesheet" href="%PUBLIC_URL%/js/modal-video.min.css" />
-    <script>
-      $(document).ready(function () {
-        $(window).scroll(function () {
-          var scroll = $(window).scrollTop()
-          if (scroll > 100) {
-            $('.overlay').css('background', '#FFFFFF')
-            $('.overlay').css('color', '#FFFFFF')
-            $('.overlay').css('box-shadow', '0 8px 6px -5px rgb(129, 126, 126)')
-          } else {
-            $('.overlay').css('background', 'rgb(0,0,0,.1)')
-            $('.overlay').css(
-              'box-shadow',
-              '0px 0px 0px 0px rgb(129, 126, 126)',
-            )
-            $('.overlay').css('color', '#FFFFFF')
-          }
-        })
-      })
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="%PUBLIC_URL%/js/nav.js"></script>
     <link rel="stylesheet" href="%PUBLIC_URL%/js/aos.css" />

@@ -5,7 +5,9 @@ html {
 .join-us {
   background: white !important;
 }
-
+.join-us .nav-link {
+  color: #000;
+}
 /* Nav bar*/
 
 .nav-menu li {
@@ -736,6 +738,7 @@ html {
   padding-top: 19% !important;
   margin-left: 53%;
   text-align: center !important;
+  z-index: 99999;
 }
 
 .why {
