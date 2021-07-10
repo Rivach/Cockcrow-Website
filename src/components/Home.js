@@ -8,6 +8,25 @@ import Footer from './Footer'
 const Home = () => {
   const [postData, setPost] = useState(null)
   useEffect(() => {
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbyuamNLX_JEnE-SKtc69KEpuG3z1Y3iZWlobBbMjQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form),
+      })
+        .then((response) => console.log('Success!', response))
+        .catch((error) => console.error('Error!', error.message))
+    })
+    let submit11 = document.querySelector('.submit')
+    if (submit11) {
+      submit11.addEventListener('click', function () {
+        alert('Successfully Submited ')
+      })
+    }
+
     let tabs = document.querySelector('.tabs')
     let tabHeader = tabs.querySelector('.tab-header')
     let tabBody = tabs.querySelector('.tab-body')

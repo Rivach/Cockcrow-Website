@@ -29,6 +29,8 @@ export default function Events() {
       })
       .catch(console.error)
   }, [])
+  if (!postData) return <div>Loading...</div>
+
   return (
     <div className='join-us'>
       <Header />
