@@ -13,7 +13,6 @@ function App() {
         <Route component={joinUs} path='/join-us' />
         <Route component={SingleEvent} path='/events/:slug' />
         <Route component={Events} path='/events' />
-
         <Route component={Error} />
       </Switch>
     </BrowserRouter>
