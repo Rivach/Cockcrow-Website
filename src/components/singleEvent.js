@@ -10,6 +10,7 @@ const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
 }
+
 export default function SingleEvent() {
   const [singlePost, setSinglePost] = useState(null)
   const { slug } = useParams()
@@ -18,29 +19,29 @@ export default function SingleEvent() {
     sanityClient
       .fetch(
         `*[ _type == "events" && slug.current == "${slug}"]{
-        title,
-        eventDate,
-        eventPlace,
-        eventType,
-        description,
-        mainImage{
-            asset->{
-                _id,
-                url
-            },
-            alt
-        },  
-        images,
-        gallery,
-        videoLink 
-    }`,
+      title,
+      eventDate,
+      eventPlace,
+      eventType,
+      description,
+      mainImage{
+        asset->{
+            _id,
+            url
+        }
+    },
+      images,
+      subimages,
+      gallery,
+      videoLink
+  }`,
       )
       .then((data) => {
         console.log(data[0])
         setSinglePost(data[0])
       })
   }, [slug])
-
+  if (!singlePost) return <div>Loading...</div>
   return (
     <div className='join-us'>
       <Header />
@@ -53,7 +54,7 @@ export default function SingleEvent() {
         }}
         className='headertext mb-0 md:text-5xl text-3xl'
       >
-        {/* {singlePost.title} */}
+        {singlePost.title}
       </h1>
       <section className='text-gray-600 body-font'>
         <div className='container head px-5 py-10 mx-auto'>
@@ -64,7 +65,7 @@ export default function SingleEvent() {
                 <img
                   alt='content'
                   className='h1 mt-16 object-contain object-center h-full w-full'
-                  src={singlePost.mainImage.asset.url}
+                  src={urlFor(singlePost.images[0]).url()}
                 />
               </div>
             </div>
@@ -74,7 +75,7 @@ export default function SingleEvent() {
                   alt='content'
                   style={{ position: 'relative' }}
                   className='h2 object-contain object-center h-full w-full'
-                  src='./event-pics/event1/head2.jpg'
+                  src={urlFor(singlePost.images[1]).url()}
                 />
               </div>
             </div>
@@ -86,7 +87,7 @@ export default function SingleEvent() {
                 <img
                   alt='content'
                   className='h3 mt-16 object-contain object-center h-full w-full'
-                  src='./event-pics/event1/head3.jpg'
+                  src={urlFor(singlePost.images[2]).url()}
                 />
               </div>
             </div>
@@ -116,48 +117,39 @@ export default function SingleEvent() {
                 <img
                   alt='gallery'
                   className='w-full h-full object-cover object-center '
-                  src='./images/ab1.jpg'
+                  src={urlFor(singlePost.subimages[0]).url()}
                 />
               </div>
               <div className='md:p-3 p-1   w-1/3'>
                 <img
                   alt='gallery'
                   className='-mt-12 w-full object-cover h-full object-center block'
-                  src='./images/ab3.jpg'
+                  src={urlFor(singlePost.subimages[1]).url()}
                 />
               </div>
               <div className='md:p-4 p-1 w-2/3'>
                 <img
                   alt='gallery'
                   className='-mt-8 w-full object-cover h-full object-center block'
-                  src='./images/abt2.jpg'
+                  src={urlFor(singlePost.subimages[2]).url()}
                 />
               </div>
             </div>
           </div>
-          <div
-            data-aos-delay='100'
-            data-aos='fade-left'
-            className=' lg:flex-grow md:w-1/2 lg:ml-12 pl-8 pr-8 bg-white md:ml-12 flex flex-col md:items-start md:text-left items-center text-center'
-          >
-            <p
+          <div className=' lg:flex-grow md:w-1/2 lg:ml-12 pl-8 pr-8 bg-white md:ml-12 flex flex-col md:items-start md:text-left items-center text-center'>
+            <h2
               className='abouttxt mb-0 mt-6 text-black text-xl leading-relaxed'
-              style={{ fontFamily: 'raleway', fontWeight: 600 }}
+              style={{ fontFamily: 'raleway', fontWeight: 1000 }}
             >
               {singlePost.title}
-            </p>
+            </h2>
             <p
               className='abouttxt mb-0 mt-6 text-black text-lg leading-relaxed'
               style={{ fontFamily: 'raleway', fontWeight: 600 }}
             >
-              {singlePost.eventType}
+              {singlePost.eventType.toUpperCase()} | {singlePost.eventPlace}
             </p>
-            <p
-              className='abouttxt mb-0 mt-6 text-black text-lg leading-relaxed'
-              style={{ fontFamily: 'raleway', fontWeight: 600 }}
-            >
-              {singlePost.eventPlace}
-            </p>
+
             <p
               className='abouttxt mb-0 mt-6 text-black text-lg leading-relaxed'
               style={{ fontFamily: 'raleway', fontWeight: 600 }}
@@ -183,37 +175,25 @@ export default function SingleEvent() {
         <div className='container px-5 py-24 mx-auto flex flex-wrap'>
           <div className='flex flex-wrap md:-m-2 -m-1'>
             <div className='flex flex-wrap w-1/2'>
-              <div
-                data-aos='zoom-in'
-                data-aos-duration='1000'
-                className='md:p-2 p-1 w-1/2'
-              >
+              <div className='md:p-2 p-1 w-1/2'>
                 <img
                   alt='gallery'
                   className='w-full object-cover h-full object-contain block'
-                  src='./event-pics/event1/head3.jpg'
+                  src={urlFor(singlePost.gallery[0]).url()}
                 />
               </div>
-              <div
-                data-aos='zoom-in'
-                data-aos-duration='1200'
-                className='md:p-2 p-1 w-1/2'
-              >
+              <div className='md:p-2 p-1 w-1/2'>
                 <img
                   alt='gallery'
                   className='w-full object-contain h-full object-center block'
-                  src='./event-pics/event1/g3.jpg'
+                  src={urlFor(singlePost.gallery[1]).url()}
                 />
               </div>
-              <div
-                className='md:p-2 p-1 w-full'
-                data-aos='zoom-in'
-                data-aos-duration='1400'
-              >
+              <div className='md:p-2 p-1 w-full'>
                 <img
                   alt='gallery'
                   className='w-full h-full object-cover object-contain block'
-                  src='./event-pics/event1/g2.jpg'
+                  src={urlFor(singlePost.gallery[2]).url()}
                 />
               </div>
             </div>
@@ -222,21 +202,21 @@ export default function SingleEvent() {
                 <img
                   alt='gallery'
                   className='w-full h-full object-cover object-contain block'
-                  src='./event-pics/event1/head1.jpg'
+                  src={urlFor(singlePost.gallery[3]).url()}
                 />
               </div>
               <div className='md:p-2 p-1 w-1/2'>
                 <img
                   alt='gallery'
                   className='w-full object-cover h-full object-contain block'
-                  src='./event-pics/event1/g1.jpg'
+                  src={urlFor(singlePost.gallery[4]).url()}
                 />
               </div>
               <div className='md:p-2 p-1 w-1/2'>
                 <img
                   alt='gallery'
                   className='w-full object-cover h-full object-contain block'
-                  src='./event-pics/event1/g4.jpg'
+                  src={urlFor(singlePost.gallery[5]).url()}
                 />
               </div>
             </div>
