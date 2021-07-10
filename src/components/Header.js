@@ -58,10 +58,10 @@ function Header() {
         li > <
         li className = 'nav-item' >
         <
-        Link to = '/#contact'
+        a href = '/#contact'
         className = 'nav-link contact' >
         Contact us <
-        /Link> < /
+        /a> < /
         li > <
         /ul> <
         div className = 'hamburger' >
