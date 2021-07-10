@@ -6,28 +6,28 @@ function Header() {
     <>
       <header>
         <nav className='navbar'>
-          <a href='/' className='nav-logo'>
+          <Link to='/' className='nav-logo'>
             <img
               src={process.env.PUBLIC_URL + '/images/logo.png'}
               className='h-28 w-28'
               alt='logo'
             />
-          </a>
+          </Link>
           <ul className='nav-menu'>
             <li className='nav-item text-white'>
-              <a href='/#about' className='nav-link'>
+              <Link to='/#about' className='nav-link'>
                 About
-              </a>
+              </Link>
             </li>
             <li className='nav-item text-white'>
-              <a href='/events' className='nav-link'>
+              <Link to='/events' className='nav-link'>
                 Events & Stories
-              </a>
+              </Link>
             </li>
             <li className='nav-item'>
-              <a href='/#contact' className='nav-link contact'>
+              <Link to='/#contact' className='nav-link contact'>
                 Contact us
-              </a>
+              </Link>
             </li>
           </ul>
           <div className='hamburger'>

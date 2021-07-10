@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import sanityClient from '../client.js'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Footer from './Footer'
 import Header from './Header'
 import imageUrlBuilder from '@sanity/image-url'
+import YoutubeEmbed from './YoutubeEmbed'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -36,7 +37,7 @@ export default function EventDetailed() {
   }`,
       )
       .then((data) => {
-        console.log(data[0])
+        // console.log(data[0])
         setSinglePost(data[0])
       })
   }, [slug])
@@ -117,6 +118,7 @@ export default function EventDetailed() {
                   alt='gallery'
                   className='w-full h-full object-cover object-center '
                   src={urlFor(singlePost.subimages[0]).url()}
+                  alt='Imah21'
                 />
               </div>
               <div className='md:p-3 p-1 w-1/3'>
@@ -124,6 +126,7 @@ export default function EventDetailed() {
                   alt='gallery'
                   className='-mt-12 w-full object-cover h-full object-center block'
                   src={urlFor(singlePost.subimages[1]).url()}
+                  alt='Imah21'
                 />
               </div>
               <div className='md:p-4 p-1 w-2/3'>
@@ -131,6 +134,7 @@ export default function EventDetailed() {
                   alt='gallery'
                   className='-mt-8 w-full object-cover h-full object-center block'
                   src={urlFor(singlePost.subimages[2]).url()}
+                  alt='Imah21'
                 />
               </div>
             </div>
@@ -222,6 +226,7 @@ export default function EventDetailed() {
           </div>
         </div>
       </section>
+      <YoutubeEmbed embedId={singlePost.videoLink} />
       <div className='contb  flex justify-center'>
         <button
           className='contact2 ml-0  mt-0 py-2 px-6  rounded text-xl'

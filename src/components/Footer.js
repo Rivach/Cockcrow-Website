@@ -1,24 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <section>
       <footer class='footer-distributed mt-10'>
         <div class='footer-left -mt-16'>
-          <img
-            src={process.env.PUBLIC_URL + './images/logo.png'}
-            class='h-28  footerimg'
-            alt=''
-          />
+          <Link to='/'>
+            <img
+              src={process.env.PUBLIC_URL + '/images/logo.png'}
+              class='h-28  footerimg'
+              alt=''
+            />
+          </Link>
 
           <p class='footer-links'>
             <a href='#about' class='link-1'>
               About us
             </a>
 
-            <a href='joinus.html'>Work with us</a>
-            <a href='privacypolicy.html'>Privacy Policy</a>
-            <a href="TandC's.html">T&C</a>
+            <a href='/join-us'>Work with us</a>
+            <a href='/privacypolicy'>Privacy Policy</a>
+            <a href='/TandC'>T&C</a>
           </p>
 
           <p class='footer-company-name'>
@@ -87,7 +90,9 @@ const Footer = () => {
           <div>
             <i class='fa fa-envelope'></i>
             <p>
-              <a href='mailto:support@company.com'>cockrow@gmail.com</a>
+              <a href='mailto:cockrowevents@gmail.com'>
+                cockrowevents@gmail.com
+              </a>
             </p>
           </div>
         </div>

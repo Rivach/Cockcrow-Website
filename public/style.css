@@ -35,6 +35,7 @@ html {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 0%;
+  z-index: 99999;
 }
 
 .hamburger {
@@ -140,7 +141,7 @@ html {
   .nav-menu {
     position: fixed;
     left: -100%;
-    z-index: 999999;
+
     top: 6rem;
     flex-direction: column;
     background-color: #fff;
@@ -148,6 +149,7 @@ html {
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    z-index: 999999 !important;
   }
   .nav-menu.active {
     left: 0;
@@ -244,7 +246,6 @@ html {
   .txt1,
   .txt2 {
     font-size: 28px;
-    z-index: 100;
   }
   .about {
     margin-top: -85%;
@@ -417,7 +418,7 @@ html {
   .nav-menu {
     position: fixed;
     left: -100%;
-    z-index: 999999;
+    /* z-index: 9999; */
     top: 6rem;
     flex-direction: column;
     background-color: #fff;
@@ -738,7 +739,7 @@ html {
   padding-top: 19% !important;
   margin-left: 53%;
   text-align: center !important;
-  z-index: 99999;
+  z-index: 99;
 }
 
 .why {
@@ -1306,4 +1307,11 @@ input[type='submit'] {
 
 .blogs {
   margin-bottom: -20%;
+}
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 20.25%;
+  margin-bottom: 3%;
+  position: relative;
+  height: 0;
 }
