@@ -4,7 +4,6 @@ import { Link, useParams } from 'react-router-dom'
 import Footer from './Footer'
 import Header from './Header'
 import imageUrlBuilder from '@sanity/image-url'
-import BlockContent from '@sanity/block-content-to-react'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -120,7 +119,7 @@ export default function SingleEvent() {
                   src={urlFor(singlePost.subimages[0]).url()}
                 />
               </div>
-              <div className='md:p-3 p-1   w-1/3'>
+              <div className='md:p-3 p-1 w-1/3'>
                 <img
                   alt='gallery'
                   className='-mt-12 w-full object-cover h-full object-center block'

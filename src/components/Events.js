@@ -79,7 +79,7 @@ export default function Events() {
                           {post.title}
                         </h1>
                         <p class='leading-relaxed mb-8'>
-                          {post.eventType} | {post.eventPlace}
+                          {post.eventType.toUpperCase()} | {post.eventPlace}
                         </p>
                         <div class='flex items-center flex-wrap '>
                           <Link
