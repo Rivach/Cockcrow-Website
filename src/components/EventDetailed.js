@@ -10,7 +10,7 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-export default function SingleEvent() {
+export default function EventDetailed() {
   const [singlePost, setSinglePost] = useState(null)
   const { slug } = useParams()
 
