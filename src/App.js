@@ -3,6 +3,8 @@ import Home from './components/Home'
 import EventDetailed from './components/EventDetailed'
 import Events from './components/Events'
 import joinUs from './components/joinUs'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import TandC from './components/TandC'
 
 import Error from './components/Error'
 function App() {
@@ -13,6 +15,9 @@ function App() {
         <Route component={joinUs} path='/join-us' />
         <Route component={EventDetailed} path='/events/:slug' />
         <Route component={Events} path='/events' />
+        <Route component={PrivacyPolicy} path='/privacypolicy' />
+        <Route component={TandC} path='/Tandc' />
+
         <Route component={Error} />
       </Switch>
     </BrowserRouter>
