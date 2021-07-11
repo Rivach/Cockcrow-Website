@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,15 +27,42 @@
 
     <title>Cockcrow</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script type="javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim:wght@200;300;400;500;600&display=swap" />
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim:wght@200;300;400;500;600&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@200;300;400;500;600&display=swap" />
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script
+      type="javascript"
+      src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Itim:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Itim:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Tangerine:wght@200;300;400;500;600&display=swap"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.1.min.js"
+    ></script>
 
     <link rel="stylesheet" href="%PUBLIC_URL%/js/modal-video.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -41,48 +70,47 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/js/aos.css" />
     <link rel="stylesheet" href="%PUBLIC_URL%/js/aos.js" />
     <link rel="stylesheet" href="%PUBLIC_URL%/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
     <script src="%PUBLIC_URL%/js/jquery-modal-video.min.js"></script>
     <script>
-        $('.video-play').modalVideo()
+      $('.video-play').modalVideo()
     </script>
     <script>
-        $(document).ready(function() {
-            $('#cockcrow').on('submit', function(evt) {
-                evt.preventDefault()
-                setTimeout(function() {
-                    window.location.reload()
-                }, 0)
-                this.submit()
-            })
+      $(document).ready(function () {
+        $('#cockcrow').on('submit', function (evt) {
+          evt.preventDefault()
+          setTimeout(function () {
+            window.location.reload()
+          }, 0)
+          this.submit()
         })
+      })
     </script>
     <script>
-        function first() {
-            document.getElementById('ban').src = '%PUBLIC_URL%/images/bg1.jpg'
-        }
+      function first() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg1.jpg'
+      }
 
-        function second() {
-            document.getElementById('ban').src = '%PUBLIC_URL%/images/bg2.jpg'
-        }
+      function second() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg2.jpg'
+      }
 
-        function thrid() {
-            document.getElementById('ban').src = '%PUBLIC_URL%/images/bg3.jpg'
-        }
+      function thrid() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg3.jpg'
+      }
 
-        function four() {
-            document.getElementById('ban').src = '%PUBLIC_URL%/images/bg4.jpg'
-        }
-        setInterval(first, 5000)
-        setInterval(second, 10000)
-        setInterval(thrid, 15000)
-        setInterval(four, 20000)
+      function four() {
+        document.getElementById('ban').src = '%PUBLIC_URL%/images/bg4.jpg'
+      }
+      setInterval(first, 5000)
+      setInterval(second, 10000)
+      setInterval(thrid, 15000)
+      setInterval(four, 20000)
     </script>
-</body>
-
+  </body>
 </html>

@@ -5,9 +5,11 @@ import Events from './components/Events'
 import joinUs from './components/joinUs'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import TandC from './components/TandC'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Error from './components/Error'
 function App() {
+  AOS.init()
   return (
     <BrowserRouter>
       <Switch>
