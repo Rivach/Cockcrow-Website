@@ -7,6 +7,7 @@ const joinUs = () => {
     <div className='join-us'>
       <Header />
       <h1
+        data-aos='fade-up'
         class='vendor-text text-center text-4xl'
         style={{ fontFamily: 'Raleway', fontWeight: 500 }}
       >
@@ -15,7 +16,10 @@ const joinUs = () => {
       <section class='text-gray-900 body-font'>
         <div class=' container px-5 py-12 mx-auto flex flex-col'>
           <div class='lg:w-4/6 mx-auto'>
-            <div class='apply mb-12 h-80 w:1/2 overflow-hidden'>
+            <div
+              data-aos='fade-up'
+              class='apply mb-12 h-80 w:1/2 overflow-hidden'
+            >
               <a href='' class='video-play' data-video-id='sRy5dJg0k-8'>
                 {' '}
                 <img
@@ -27,6 +31,7 @@ const joinUs = () => {
               </a>
             </div>
             <h1
+              data-aos='fade-up'
               class='joining text-5xl text-center mt-20 mb-8'
               style={{
                 textDecoration: 'underline',
@@ -38,10 +43,14 @@ const joinUs = () => {
             >
               Process of joining
             </h1>
-            <div class='flex flex-col sm:flex-row mt-10'>
+            <div data-aos='fade-up' class='flex flex-col sm:flex-row mt-10'>
               <img src={process.env.PUBLIC_URL + 'images/step.png'} alt='' />
             </div>
-            <div class='items-center downloadbutton  mt-20 flex justify-center'>
+            <div
+              data-aos='fade-up'
+              data-aos-delay='400'
+              class='items-center downloadbutton  mt-20 flex justify-center'
+            >
               <button
                 class='download ml-0   py-2 px-6  rounded text-lg'
                 style={{ fontFamily: 'Raleway', fontWeight: 'bold' }}
@@ -64,7 +73,7 @@ const joinUs = () => {
       </section>
       <section class='text-gray-800 body-font'>
         <div class='container px-5 py-12 mx-auto'>
-          <div class='flex flex-wrap -m-4 text-center'>
+          <div data-aos='fade-up' class='flex flex-wrap -m-4 text-center'>
             <div class='p-4 md:w-1/3 sm:w-1/2 w-full'>
               <div class='border-2 border-gray-200 px-4 py-6 rounded-lg'>
                 <svg
@@ -133,7 +142,7 @@ const joinUs = () => {
           </div>
         </div>
       </section>
-      <section class='text-gray-800 body-font'>
+      <section data-aos='fade-up' class='text-gray-800 body-font'>
         <div class='container px-5 py-20 mx-auto'>
           <h1
             class='text-4xl font-medium title-font text-gray-900 mb-12 text-center'
@@ -207,6 +216,7 @@ const joinUs = () => {
         </div>
       </section>
       <h1
+        data-aos='fade-up'
         class='text-center text-4xl'
         style={{ fontFamily: 'Raleway', fontWeight: 500 }}
       >
