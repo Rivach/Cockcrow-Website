@@ -79,12 +79,12 @@ const Home = () => {
               alt=''
             />
           </div>
-          <div className='txt md:w-4/5 flex flex-col text-white items-center'>
+          <div
+            data-aos='fade-left'
+            data-aos-delay='1500'
+            className='txt md:w-4/5 flex flex-col text-white items-center'
+          >
             <h3
-              data-aos='flip-left'
-              data-aos-delay='50'
-              data-aos-duration='2000'
-              data-aos-easing='ease-in-out-cubic'
               className='txt1 text-5xl text-center mb-2 p-0'
               style={{ fontFamily: 'Raleway', fontWeight: 800 }}
             >
@@ -96,7 +96,11 @@ const Home = () => {
             >
               More Memorable{' '}
             </h3>{' '}
-            <div className='contb flex justify-center'>
+            <div
+              data-aos='fade-left'
+              data-aos-delay='2500'
+              className='contb flex justify-center'
+            >
               <button
                 className='contact2 ml-0   py-2 px-6  rounded text-xl'
                 style={{ fontFamily: 'Raleway', fontWeight: 'bold' }}
@@ -109,6 +113,8 @@ const Home = () => {
       </section>
       <section className='about py-12 text-white body-font'>
         <h1
+          data-aos='fade-down'
+          data-aos-delay='100'
           id='about'
           className='whowe text-center text-gray-200 text-5xl mt-6 mb-12 font-medium '
           style={{ fontFamily: 'Raleway' }}
@@ -120,6 +126,7 @@ const Home = () => {
             <div className='flex flex-wrap '>
               <div className='md:p-0 p-1 w-6/7'>
                 <img
+                  data-aos='zoom-in'
                   alt='gallery'
                   className='w-full h-full object-cover object-center block'
                   src={process.env.PUBLIC_URL + '/images/ab1.jpg'}
@@ -127,6 +134,8 @@ const Home = () => {
               </div>{' '}
               <div className='md:p-2 p-1   w-1/3'>
                 <img
+                  data-aos-delay='500'
+                  data-aos='zoom-in'
                   alt='gallery'
                   className='w-full object-cover h-full object-center block'
                   src={process.env.PUBLIC_URL + '/images/ab3.jpg'}
@@ -134,6 +143,8 @@ const Home = () => {
               </div>{' '}
               <div className='md:p-2 p-1 w-2/3'>
                 <img
+                  data-aos-delay='1000'
+                  data-aos='zoom-in'
                   alt='gallery'
                   className='w-full object-cover h-full object-center block'
                   src={process.env.PUBLIC_URL + '/images/abt2.jpg'}
@@ -141,7 +152,11 @@ const Home = () => {
               </div>{' '}
             </div>{' '}
           </div>{' '}
-          <div className='aboutbox lg:flex-grow md:w-1/2 lg:ml-12 pl-8 pr-8  md:ml-12 flex flex-col md:items-start md:text-left items-center text-center'>
+          <div
+            data-aos-delay='100'
+            data-aos='fade-left'
+            className='aboutbox lg:flex-grow md:w-1/2 lg:ml-12 pl-8 pr-8  md:ml-12 flex flex-col md:items-start md:text-left items-center text-center'
+          >
             <p
               className='abouttxt mb-8 mt-6 text-white text-xl leading-relaxed'
               style={{ fontFamily: 'Raleway', fontWeight: 500 }}
@@ -163,6 +178,8 @@ const Home = () => {
       </section>{' '}
       <section id='WhyCockrow' className='text-gray-600 body-font'>
         <h1
+          data-aos='fade-down'
+          data-aos-delay='500'
           className='why title-font md:text-5xl text-center  text-3xl mb-4 font-medium text-gray-200 '
           style={{ fontFamily: 'Raleway' }}
         >
@@ -170,7 +187,11 @@ const Home = () => {
         </h1>
         <div className='container mx-auto flex px-5 py-6 md:flex-row flex-col items-center'>
           <div className='lg:flex-grow md:w-1/2 lg:pr-8 md:pr-6 flex flex-col md:items-start md:text-left mb-0 md:mb-0 items-center text-center'>
-            <p className='whytext mb-8 text-xl text-gray-100 p-8 rounded leading-relaxed '>
+            <p
+              data-aos='fade-right'
+              data-aos-delay='500'
+              className='whytext mb-8 text-xl text-gray-100 p-8 rounded leading-relaxed '
+            >
               Cockcrow Events is pioneering the event management sector to a
               more technologically driven industry with an application that
               enables users to book any scale of events in just 60 minutes,
@@ -182,7 +203,11 @@ const Home = () => {
               business.{' '}
             </p>{' '}
           </div>{' '}
-          <div className='md:w-2/5 w-5/6 items-center '>
+          <div
+            data-aos='fade-left'
+            data-aos-delay='500'
+            className='md:w-2/5 w-5/6 items-center '
+          >
             <img
               src={process.env.PUBLIC_URL + '/images/play.png'}
               style={{ opacity: 90 }}
@@ -195,6 +220,8 @@ const Home = () => {
         <div className='container px-5 mx-auto'>
           <div className='flex flex-col text-center w-full mb-20'>
             <h1
+              data-aos='fade-down'
+              data-aos-delay='100'
               className='high text-center text-gray-200 text-5xl mt-6 mb-0 font-medium '
               style={{ fontFamily: 'Raleway' }}
             >
@@ -206,7 +233,11 @@ const Home = () => {
             {postData &&
               postData.map((post, index) => (
                 <>
-                  <div className='lg:w-1/3 sm:w-1/2 p-4'>
+                  <div
+                    data-aos='fade-up'
+                    data-aos-delay='100'
+                    className='lg:w-1/3 sm:w-1/2 p-4'
+                  >
                     <Link to={'/events/' + post.slug.current} key={index}>
                       <div className='flex relative'>
                         <div className='image'>
@@ -228,7 +259,11 @@ const Home = () => {
                   </div>{' '}
                 </>
               ))}
-            <div className='items-center eventbutton mt-10 flex justify-center'>
+            <div
+              data-aos='fade-up'
+              data-aos-delay='200'
+              className='items-center eventbutton mt-10 flex justify-center'
+            >
               <button
                 className='viewMoreEvents ml-0   py-2 px-6  rounded text-xl'
                 style={{ fontFamily: 'Raleway', fontWeight: 'bold' }}

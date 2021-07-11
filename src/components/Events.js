@@ -35,6 +35,8 @@ export default function Events() {
     <div className='join-us'>
       <Header />
       <h1
+        data-aos='fade-up'
+        data-aos-duration='2200'
         style={{
           textAlign: 'center',
           fontFamily: 'Tangerine',
@@ -45,6 +47,8 @@ export default function Events() {
         Events & Stories
       </h1>
       <section
+        data-aos='fade-up'
+        data-aos-duration='2500'
         class=' body-font'
         style={{
           paddingBottom: '20%',
