@@ -120,6 +120,11 @@ html {
 /* end of nav bar */
 
 @media only screen and (min-width: 768px) and (max-width: 1080px) {
+    .video-responsive {
+        margin-left: 20%;
+        width: 500px !important;
+        height: 285px !important;
+    }
     .image {
         position: relative;
         margin-left: 15%;
@@ -318,6 +323,11 @@ html {
     .high {
         font-size: 28px;
         margin-bottom: -16%;
+    }
+    .video-responsive {
+        margin-left: 8%;
+        width: 300px !important;
+        height: 285px !important;
     }
     .highlight {
         height: 650px !important;
@@ -641,18 +651,6 @@ html {
     padding-top: 18%;
 }
 
-.contact {
-    position: relative;
-    display: inline-block;
-    padding: 8px 40px;
-    text-decoration: none;
-    color: #1a1a1a;
-    border-radius: 5px;
-    background: linear-gradient(to bottom, #74fddc, #35cfff);
-    font-family: poppins;
-    transition: 0.5s;
-}
-
 .contact:hover {
     color: #000;
     cursor: pointer;
@@ -692,6 +690,10 @@ html {
     padding-top: 0%;
 }
 
+.join-us .contact {
+    color: #fff;
+}
+
 .contact {
     position: relative;
     display: inline-block;
@@ -700,6 +702,7 @@ html {
     color: #ffffff;
     background: linear-gradient(145deg, #37c3a1, #0013b0);
     font-family: Raleway;
+    border-radius: 5px;
     font-weight: bold;
     transition: 0.5s;
 }
