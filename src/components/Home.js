@@ -161,12 +161,15 @@ const Home = () => {
               className='abouttxt mb-8 mt-6 text-white text-xl leading-relaxed'
               style={{ fontFamily: 'Raleway', fontWeight: 500 }}
             >
-              We curate every single detail especially for you...so that you and
-              your family can have an unforgettable experience in the city of
-              Nawabs.From the genesis to an impeccably flawless execution that
-              is both on trend and timeless, we do this all for you We deliver
-              the most cheerful, lively and dazzling celebratory events at
-              ravishingly affordable prices.{' '}
+            Organizing something ? It calls for taking up responsibility of every minute detail ,
+making sure the guests are all satisfied and everything happens as planned, on time 
+and within the planned budget. Tiresome!!? it of course is! We at cockcrow aim to 
+revolutionize the event managing system. Be it official meetings or get-togethers, 
+once-in-a-lifetime occasions like marriage or recurring events like weekly workshops, 
+company conferences or birthday parties ,it could be a momentous event or a casual
+meetup ,cockcrow gives it all at one go without any hassle, reducing time , saving 
+money and immense pressure. Your smiles and successes are our fuel, as we thrive 
+to empower our partners and promise our customers transparency at every step.{' '}
             </p>{' '}
           </div>{' '}
         </div>{' '}
