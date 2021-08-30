@@ -195,15 +195,7 @@ to empower our partners and promise our customers transparency at every step.{' 
               data-aos-delay='500'
               className='whytext mb-8 text-xl text-gray-100 p-8 rounded leading-relaxed '
             >
-              Cockcrow Events is pioneering the event management sector to a
-              more technologically driven industry with an application that
-              enables users to book any scale of events in just 60 minutes,
-              bridging the gaps of budget feasibility, transparency,
-              accountability, and customization. <br /> The key fact of this
-              business model is“ Integrating creativity with technology”.Every
-              ounce of the application and machinery is built by a team of
-              experts led by a leader who is the brainchild of this transitional
-              business.{' '}
+              C.{' '}
             </p>{' '}
           </div>{' '}
           <div
