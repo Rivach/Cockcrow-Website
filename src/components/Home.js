@@ -88,13 +88,14 @@ const Home = () => {
               className='txt1 text-5xl text-center mb-2 p-0'
               style={{ fontFamily: 'Raleway', fontWeight: 800 }}
             >
-              We Make Your Moments{' '}
+              WE ARE NO ORDINARY ORGANISERS - WE ARE EMPOWERERS{' '}
             </h3>{' '}
             <h3
               className='txt2 text-5xl text-center mb-8 p-2'
               style={{ fontFamily: 'Raleway', fontWeight: 1000 }}
             >
-              More Memorable{' '}
+              Your smiles and successes are our fuel, as we thrive to empower our partners and 
+promise our customers transparency at every step.{' '}
             </h3>{' '}
             <div
               data-aos='fade-left'
